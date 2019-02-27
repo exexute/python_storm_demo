@@ -3,6 +3,10 @@ import os
 from collections import Counter
 from streamparse import Bolt
 import re
+import time
+
+def create_timestamp():
+    return int(round(time.time() * 1000))
 
 def parse(msg):
     message={}
