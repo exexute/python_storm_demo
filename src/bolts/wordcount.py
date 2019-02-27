@@ -9,6 +9,7 @@ def create_timestamp():
     return int(round(time.time() * 1000))
 
 def parse(msg):
+    print(msg)
     message={}
     message['timestamp']=create_timestamp()
     try:
@@ -66,7 +67,6 @@ def parse(msg):
         print(messamsg.decode("utf-8"))
     except Exception as e:
       print(e)
-      print(msg.decode('utf-8'))
     else:
       pass
     if len(message)>1:
