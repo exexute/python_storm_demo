@@ -13,7 +13,7 @@ class WordCountBolt(Bolt):
         self.pid = os.getpid()
 
     def parse(self, tup):
-        self.logger.info(str(tup))
+        self.logger.info(str(tup, encoding='utf-8'))
 
 
     def process(self, tup):
