@@ -2,6 +2,7 @@
 import os
 from collections import Counter
 from streamparse import Bolt
+import re
 
 def parse(msg):
     message={}
