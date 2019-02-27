@@ -14,7 +14,9 @@ class WordCountBolt(Bolt):
 
     def parse(self, tup):
         self.logger.info(type(tup))
-        self.logger.info(tup.encode('utf-8'))
+        msg = tup.encode('utf-8')
+        self.logger.info(type(msg))
+        self.logger.info(msg)
 
 
     def process(self, tup):
