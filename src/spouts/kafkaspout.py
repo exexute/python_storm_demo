@@ -14,4 +14,5 @@ class kafkaSpout(Spout):
 
     def next_tuple(self):
         msg = next(self.messages)
+        self.log.info(msg)
         self.emit([msg])
