@@ -17,7 +17,7 @@ class WordCountBolt(Bolt):
 
 
     def process(self, tup):
-        if is_heartbeat(tup):
+        if self.is_heartbeat(tup):
             pass
         else:
             self.emit([self.parse(tup)])
