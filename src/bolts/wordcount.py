@@ -44,7 +44,7 @@ class WordCountBolt(Bolt):
     def initialize(self, conf, ctx):
         self.counter = Counter()
         self.pid = os.getpid()
-        self.ok = owef_kafka(hosts="10.129.7.l21:9092")
+        self.ok = owef_kafka(hosts="10.129.7.l21:9092,10.129.7.236:9092")
         self.ok.producer('indexing')
 
     def process(self, tup):

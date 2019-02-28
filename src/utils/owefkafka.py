@@ -36,5 +36,5 @@ class owef_kafka(object):
     self._producer = _topic.get_producer()
 
   def writemsg(self, msg):
-    self._producer.produce(bytes(str(msg), encoding='utf-8'))
+    self._producer.produce(bytes(msg))
 
