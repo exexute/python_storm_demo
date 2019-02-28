@@ -43,10 +43,12 @@ class WordCountBolt(Bolt):
     def initialize(self, conf, ctx):
         self.counter = Counter()
         self.pid = os.getpid()
+        self.ok = owef_kafka(hosts="10.129.7.l21:9092")
+        self.ok.producer('indexing')
 
     def process(self, tup):
         message = parse(tup.values[0])
-        self.logger.info(message)
+        self.ok.writemsg(msg=message)
         '''
         self.logger.error(tup.values[0])
         message=parse(tup.values[0])
