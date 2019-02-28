@@ -14,5 +14,4 @@ class kafkaSpout(Spout):
 
     def next_tuple(self):
         msg = next(self.messages)
-        self.logger.error(type(msg))
-        self.emit([msg])
+        self.emit([msg.decode("utf-8")])

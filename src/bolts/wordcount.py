@@ -81,7 +81,7 @@ class WordCountBolt(Bolt):
         self.pid = os.getpid()
 
     def process(self, tup):
-        self.logger.error(type(tup.values[0]))
+        self.logger.error(tup.values[0])
         message=parse(tup.values[0])
         if message:
             self.emit([message])
