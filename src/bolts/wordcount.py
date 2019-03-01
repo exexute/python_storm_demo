@@ -16,7 +16,7 @@ def parse(msg):
       matchobj = pattern.match(msg)
       if matchobj:
         fwtype = matchobj.group(1)
-        _msg+=',"fwtype":"'+fwtype.encode('utf-8')+'","source:type":"'+'firewall'
+        _msg+=',"fwtype":"'+fwtype.encode('utf-8')+'","source.type":"'+'firewall'
         if fwtype==u'WEB\u5e94\u7528\u9632\u62a4':
           _msg+='","policy":"'+matchobj.group(7).encode('utf-8')+'","feature_id":"'+matchobj.group(8).encode('utf-8')+'","src_ip":"'+matchobj.group(9).encode('utf-8')+'","dest_ip":"'+matchobj.group(11).encode('utf-8')+'","attack_type":"'+matchobj.group(13).encode('utf-8')+'","level":"'+matchobj.group(14).encode('utf-8')+'","sys_action":"'+matchobj.group(15).encode('utf-8')+'","uri":"'+matchobj.group(16).encode('utf-8')
         elif fwtype == u'\u6d41\u91cf\u5ba1\u8ba1':
