@@ -11,7 +11,7 @@ def create_timestamp():
 
 def parse(msg):
     timestamp=create_timestamp()
-    _msg = '{"timestamp":'+str(timestamp)+',"logtime":"'+str(timestamp)
+    _msg = '{"timestamp":'+str(timestamp)+',"logtime":'+str(timestamp)
     try:
       pattern=re.compile(u'^fwlog: \u65e5\u5fd7\u7c7b\u578b:([\w\W\u4e00-\u9fa5]+), (?:\u5e94\u7528\u7c7b\u578b:([\w\W\u4e00-\u9fa5]+), \u7528\u6237\u540d/\u4e3b\u673a:((?:(?:25[0-5]|2[0-4]\d|(?:1\d{2}|[1-9]?\d))\.){3}(?:25[0-5]|2[0-4]\d|(?:1\d{2}|[1-9]?\d))), \u4e0a\u884c\u6d41\u91cf\(KB\):(\d+), \u4e0b\u884c\u6d41\u91cf\(KB\):(\d+), \u603b\u6d41\u91cf\(KB\):(\d+)|\u7b56\u7565\u540d\u79f0:([\w\W\u4e00-\u9fa5]+), (?:\u89c4\u5219ID|\u7279\u5f81ID):(\d+), \u6e90IP:((?:(?:25[0-5]|2[0-4]\d|(?:1\d{2}|[1-9]?\d))\.){3}(?:25[0-5]|2[0-4]\d|(?:1\d{2}|[1-9]?\d))), \u6e90\u7aef\u53e3:(\d+), \u76ee\u7684IP:((?:(?:25[0-5]|2[0-4]\d|(?:1\d{2}|[1-9]?\d))\.){3}(?:25[0-5]|2[0-4]\d|(?:1\d{2}|[1-9]?\d))), \u76ee\u7684\u7aef\u53e3:(\d+), \u653b\u51fb\u7c7b\u578b:([\w\W\u4e00-\u9fa5]+), \u4e25\u91cd\u7ea7\u522b:([\w\W\u4e00-\u9fa5]+), \u7cfb\u7edf\u52a8\u4f5c:([\w\W\u4e00-\u9fa5]+), URL:([\w\W]*)|\u7b56\u7565\u540d\u79f0:([\w\W\u4e00-\u9fa5]+), \u6f0f\u6d1eID:(\d+), \u6f0f\u6d1e\u540d\u79f0:([\w\W\u4e00-\u9fa5]+), \u6e90IP:((?:(?:25[0-5]|2[0-4]\d|(?:1\d{2}|[1-9]?\d))\.){3}(?:25[0-5]|2[0-4]\d|(?:1\d{2}|[1-9]?\d))), \u6e90\u7aef\u53e3:(\d+), \u76ee\u7684IP:((?:(?:25[0-5]|2[0-4]\d|(?:1\d{2}|[1-9]?\d))\.){3}(?:25[0-5]|2[0-4]\d|(?:1\d{2}|[1-9]?\d))), \u76ee\u7684\u7aef\u53e3:(\d+), \u534f\u8bae:([\w\W\u4e00-\u9fa5]+), \u653b\u51fb\u7c7b\u578b:([\w\W\u4e00-\u9fa5]+), \u4e25\u91cd\u7b49\u7ea7:([\w\W\u4e00-\u9fa5]+), \u52a8\u4f5c:([\w\W\u4e00-\u9fa5]+))')
       matchobj = pattern.match(msg)
